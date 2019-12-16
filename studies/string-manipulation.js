@@ -4,7 +4,7 @@
  *  
  * Because the contents of a string are indexed, we have a number of ways to manipulate,  
  * edit, and return values of strings. These tools are useful to developers, especially in the 
- * event of long string properties, or in the event that multiple strings must be joined together\
+ * event of long string properties, or in the event that multiple strings must be joined together.
  */
  
  // 1. With operators //
