@@ -23,9 +23,18 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+    // declaing empty array to receive the function arguments
+  var rangeArray = [];
+  //conditional statement to determine where to start the loop
+  if (start < end) { //if start is the lower number then run the first loop
+  for (let i = start; i <= end; i ++) {
+      rangeArray.push(i);
+  } } else if (start > end) { // if start is the higher number, then decrement from start to finish
+      for (let j = start; j > end-1; j--)
+    rangeArray.push(j);
+  }
     
-    
-    
+    return rangeArray;
     
     // YOUR CODE GOES ABOVE HERE //
 }

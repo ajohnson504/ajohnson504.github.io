@@ -37,25 +37,66 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+//creating object literal to add object key/value pairs to. Function will return this object
+let contactObject = {};
+contactObject['id'] = id; 
+contactObject['nameFirst'] = nameFirst; 
+contactObject['nameLast'] = nameLast; 
+return contactObject;
 
 } 
-
-
 function makeContactList() {
-    /*
-     * You need something here to hold contacts. See length api for a hint:
-     */
-    var contacts;
-    
+     
+let contacts = []; //will hold our contacts
+
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        
+            },
+        
+        addContact: function(contactObject) { //will add contact to contact list
+            contacts.push(contactObject); //pushing contact's name into the array
+        },
+
+        removeContact: function(contact) {
+            for (let i = 0; i < contacts.length; i++) {
+                if (contact === contacts[i]) {
+                contacts.splice(i, 1);
+                    }
+                }
+        },
+            findContact: function(fullName) { //will search through contacts when given a full name string
+            for (let i = 0; i < contacts.length; i++) {//for loop to loop through our contactArray
+               if (contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName) {
+                   return contacts[i];
+               } else if (i > contacts.length) {
+                   return undefined;
+              }
+            }
+         },
+                  
+         printAllContactNames: function() {
+             let fullNames = [];
+             let fullName;
+              for (let i = 0; i < contacts.length; i++) {
+                let everyContact = contacts[i];
+                let fullName =  everyContact.nameFirst + " " + everyContact.nameLast;
+                      fullNames.push(fullName);
+              }
+            var fullNamesString = fullNames.join("\n");
+            return fullNamesString;
+         }
+
+            };
+
+
+
+
+
+
 }
-
-
 
 
 // YOUR CODE GOES ABOVE HERE //

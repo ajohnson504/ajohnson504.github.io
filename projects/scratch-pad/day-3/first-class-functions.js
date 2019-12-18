@@ -124,21 +124,12 @@ function modifyStrings(strings, modify) {
     * and the second being a function that modifies those strings. The parent function will return
     * an array of those strings after being modified */
     
-    //testing modify with typeof to make sure it's a function
-    if (typeof modify === 'function') {
-    /*create a function expression that allows the parameter 'modify' 
-    * to receive 'strings' as a parameter*/
-    var functionModifier = function() {
-        modify(strings);
-        return strings;
-        };
-    }
     //call functionModifier to allow "modify" to change "strings"
-    functionModifier();
+
     //for loop to push the modified contents of 'strings' into a new collection
     let stringsModified = [];
     for (let i = 0; i < strings.length; i++) {
-        stringsModified.push(strings[i]);
+        stringsModified.push(modify(strings[i]));
     }
     
     return stringsModified;
@@ -157,9 +148,11 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+
+     for (let i = 0; i < strings.length; i++) {
+      if(test(strings[i]) === false) {
+          return false;
+    }} return true;
     
     // YOUR CODE ABOVE HERE //
 }

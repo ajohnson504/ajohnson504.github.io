@@ -64,12 +64,13 @@
 /* When a function as assigned to a variable this is known as a function expression. To use the function, we simply
  * need to write out the variable name followed by parentheses. Note that naming a function in this scenario is 
  * optional. The syntax is as follows:
- */  
- var = functionExpressionName function() {
+   
+ * var = functionExpressionName function() {
      //code here
  }
  
- functionExpressionName() //invoking the function using the name of the variable
+ */
+ //functionExpressionName() //invoking the function using the name of the variable
  
 // 4. specifying inputs vs outputs
 /* The input refers to the argument that is placed inside the parameter. Parameters act as placeholders, whereas arguments

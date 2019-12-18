@@ -151,7 +151,7 @@
  /* The ternary operator (or conditional operator) is the only operator that takes three operands. Just like
   * its name suggests, this operator takes a condition, and if it is true, assigns the value to either one of
   * two results. The syntax is as follows: condition ? value1 : value2; */
-  
+  var weather;
   var temperature = (weather > 79) ? 'hot' : 'warm'; /* If weather is greater than the number 79, then temperature
                                                       * takes a value of hot. Otherwise, it takes a value of warm 
                                                       */

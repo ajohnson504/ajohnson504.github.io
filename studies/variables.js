@@ -98,9 +98,9 @@ for (let key in myObject) { //using 'let' to declare the variable 'key'
  * being initialized. Always be sure to assign data to your const on the same line you 
  * initialize it */
 
-const sessionTime = 'Your session has timed out'; //declaring and initializing const
-sessionTime = 'Your session has expired'; //attempting to reassign const
-console.log(sessionTime); // throws a TypeError because const cannot be re-assigned
+//const sessionTime = 'Your session has timed out'; //declaring and initializing const
+//sessionTime = 'Your session has expired'; //attempting to reassign const
+//console.log(sessionTime); // throws a TypeError because const cannot be re-assigned
 
 // 6. hoisting //
 
@@ -131,8 +131,7 @@ console.log(sample) //printing an un-initialized variable returns 'undefined'
  * top of the code (line 0). This is one major difference between let and var. Let can only be used once
  * the code reaches the line where it is declared. This same rule applies to const. */
  
- console.log(letRules); //throws a reference error because letRules does not yet exist
- 
- let letRules = 'I heart ES6';
+ //console.log(letRules); //throws a reference error because letRules does not yet exist
+ //let letRules = 'I heart ES6';
  
 

@@ -41,18 +41,9 @@
  /* A switch statement offers the same functionality as an if-elseif-else statement. The difference
   * is that it offers cleaner looking code that is easier to read, especially when checking for many 
   * conditions. The other major difference is that switch statements allow you to offer multiple 
-  * conditions that will execute the same result.*/
-  
-  // Here's the switch statement syntax:
-  
-  switch (expression) { //the expression will be compared to the case(s)
-  case value: 
-   //if expression === value, the code written here will execute
-    break; //break statement moves the code on to the next case
-  default: //default acts just like the 'else' statement 
-   //this code will execute if none of the cases equal the expression
-    break;
-}
+  * conditions that will execute the same result.
+  */
+
 
    // Here's a switch statement example:
    
