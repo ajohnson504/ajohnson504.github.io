@@ -2,32 +2,51 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
-
+function min(num1, num2) { //function that takes two numbers as arguments
+  return Math.min(num1, num2); //return the minimum of the two arguments
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
-
-}
-
+function isEven(posNum) { //function taking a positive number as an argument
+  let bool;
+  if ((posNum - 2) % 2 === 0) { //if argument - 2 is divisible by 2, then the argument is an even number
+    bool = true;
+  } else {bool = false} //if not, then the argument is an odd number
+  return bool; //return value 'bool' to show the evennness or oddness of the argument
+}  
 ////////////////////////////////////////////////////////////////////////////////
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(string, char) { 
+  //function will take a string and a character, then return the number
+  //of character occurences in that string
+  let num = 0;//number value to be increased if character occurs in string
+  for (let i = 0; i < string.length; i++) { //loop to iterate through our string indices
+    if(string[i] === char) {//if string index === given character, add 1 to num
+      num += 1;
+    }
+  }
+  return num;
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+  //function will take a single string as an argument, and return the number of uppercase Bs
+  let num = 0;
+  for (let i = 0; i < string.length; i++) { //for loop to iterate through string indices
+    if (string[i] === 'B') { //if string index === uppercase 'B', add 1 to num
+      num += 1;
+    }
+  }
+  return num;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

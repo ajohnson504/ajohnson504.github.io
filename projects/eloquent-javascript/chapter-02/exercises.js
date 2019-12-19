@@ -40,29 +40,24 @@ function drawChessboard(param) {
 //this function will print a chessboard of 'spaces' and '#'
 //the function parameter will specify the length of the board both horizontally and vertically
 //creating an empty string to receive spaces and '#'
-var chessboard = '';
+var board = '';
 //creating a for loop to add the spaces and strings to variable 'chessboard'
-for (let i = 0; i < param-1; i++) {
-    // Creating a conditional statement that is to skip the space where the index is divisble by
-    // 2, and add a '#' where the index is an odd number. 
-   if (i % 2 === 0) {
-       chessboard += '';
-   } else (chessboard += '#');
-    // Nesting a for loop within the first for loop. The nested for loop will print a space
-    // or a '#' for every first space that is printed horizontally.
-   for (let j = 0; j < param-1; j++) {
-    //creating a conditional statement in the nested loop to determine where the space goes vs. where the 
-    // '#' goes. Spaces are placed at even-numbered indices, whereas '#' is placed at odd-
-    // numbered indices. 
-     if (j % 2 === 0) { 
-      chessboard += ' '; 
-     } else (chessboard += '#');
+for (let i = 0; i < param; i++) {
+  for (var j = 0; j < param; j++) {//nested for loop
+    if ((i+j) % 2 == 0) {//conditiona statement,
+      board += ' ';
+    } else {
+      board += '#';
     }
-    chessboard += '\n';
   }
-  return chessboard; 
-
+  board +='\n';
 }
+
+console.log(board);
+
+  
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
