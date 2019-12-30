@@ -8,7 +8,7 @@
  * Functions also represent a complete statement in code, and they are able to utilize any data type 
  * (including other functions). Also unique to functions is their ability to take on parameters (or a
  * arguments). A parameter is an undefined data type that can be received when calling or invoking a function.
- * The developer must specify what to do with the parameter inside the code block. Npte that creating a 
+ * The developer must specify what to do with the parameter inside the code block. Note that creating a 
  * function with parameters is optional, and that a function can receive any number of parameters.
  * 
  * To create a function, we must use the 'function' keyword, followed by the name of the function with 
@@ -61,16 +61,27 @@
  
 
 // 3. assigning functions to variables
-/* When a function as assigned to a variable this is known as a function expression. To use the function, we simply
- * need to write out the variable name followed by parentheses. Note that naming a function in this scenario is 
- * optional. The syntax is as follows:
-   
- * var = functionExpressionName function() {
-     //code here
- }
+/* When an anonymous function is assigned to a variable this is known as a function expression. To use the 
+ * function, we simply need to write out the variable name followed by parentheses. Just like normal functions,
+ * if the function expression takes in any arguments we must include those as well. Note that using an anonymous
+ * function is optional. We can also name the function within the variable. The syntax is as follows:
+ *
+ */ 
  
- */
- //functionExpressionName() //invoking the function using the name of the variable
+ var rocketMan = function(param1) { //anonymous function assigned to variable rocketMan
+     console.log('Elton John' + param1); //code to be executed 
+ };
+ 
+ rocketMan(' is the rocket man.') //calling a function expression using the name of the variable
+ 
+ var pinkFloyd = function favAlbum(param1) {//assigning a named function to a variable
+     console.log(param1 + ' is my favorite Pink Floyd album.')//code to be executed
+ };
+ 
+ pinkFloyd('Shine on you Crazy Diamond'); //when naming a function inside of a function expression, it must still be 
+                                          //invoked using the name of the variable, not the name of the function!
+                       
+// expected output: "Shine on you Crazy Diamond is my favorite Pink Floyd album."
  
 // 4. specifying inputs vs outputs
 /* The input refers to the argument that is placed inside the parameter. Parameters act as placeholders, whereas arguments

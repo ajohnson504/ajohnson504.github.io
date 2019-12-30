@@ -11,15 +11,9 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
- /* Open up the file data.js.
- Create a variable named `animal` and assign it to an empty object.
- Using **dot notation** give `animal` a **property** named `species` with a value of any animal 
- species.
- Using **bracket notation** give `animal` a **property** called `name` with a value of your 
- animal`s name.
- Using either notation, give `animal` a **property** called `noises` with a value of empty array.
- Print your `animal` Object to the console by adding, `console.log(animal);`, */
- 
+
+ //Here, we'll declare an object literal named 'animal' then, using dot notation, we'll asign it a species, name, and 
+ //an empty array that will contain a list of animal noises. Finally, we'll console.log our new object
  var animal = {};
  animal.species = 'bear';
  animal['name'] = 'Yogie';
@@ -30,23 +24,13 @@
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-/* Create a variable named `noises` and assign it to an empty array.
-1. Using **bracket notation** give `noises` it's first element. A 
-    string representing a sound your animal might make.
-2. Using an array function add another noise to the end of `noises`.
-3. Go to the array documentation: 
-   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array?redirectlocale=en-US
-4.Look through the functions until you find the one that will place an element 
- at the begining of the array.
- add an element to `noises` using this function.
-5. Using **bracket syntax** again, add another element to the end of `noises`. 
-  Make sure that the way you do this step would work no matter how many elements `noises` had. 
-  In other words, don't hard code the position of the new element.
-  `console.log` the length of `noises`
-  `console.log` the last element in `noises` again without hard coding the index.
-  `console.log` the whole array.
-  [ ] Does it look right? */
 
+
+//Here, we'll create an empty array named noises. Then, using bracket notation, we'll add a noise
+//at index 0. Then, using the .push and .unshift method, we'll add two more noises to our array.
+//Then, using the .length method, we'll add another noise to the very end of our array. Finally, we'll 
+//print three items to the console: the length of the array, the final item in our array, 
+//and lastly all the contents of the array
 var noises = [];
 
 noises[0] = 'roar';
@@ -63,11 +47,10 @@ console.log(noises);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-/* 1. [ ] Using **bracket syntax**, assign the `noises` property on `animal` to our new 
-         `noises` array.
- 2. [ ] Using any syntax add another noise to the `noises` property on `animal`.
- 3. [ ] `console.log` `animal`.
- 4. [ ] Does it look right? */
+ //Here, we'll use bracket notation to assign our array of noises to the noises property
+ //inside the object 'animal'. Then, we'll use the .push method to assign yet another
+ //noise to our animal array. Finally, we'll console.log our object to test and make
+ //sure it properly receive the new noise
 
 animal['noises'] = noises;
 noises.push('screech');
@@ -101,17 +84,13 @@ console.log(animal);
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-/* 1. [ ] Create a variable named `animals` and assign it to an empty array.
- 2. [ ] `push` our `animal` that we created to `animals`.
- 3. [ ] `console.log` `animals`. What does it look like?
- 4. [ ] Create a variable called `duck` and assign it to the data:
-  - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
- 5. [ ] `push` `duck` to `animals`
- 6. [ ] `console.log` `animals`. What does it look like?
- 7. [ ] Create two more animal objects each with a species, a name, and at least 
-        two sounds sounds and add each one of them to `animals.
- 8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. 
-      Is everything looking right? */
+      
+// Next, we'll create a new array called 'animals', and then we'll push our 'animal' object into 
+// our 'animals' array, then we'll console.log it to make sure everything looks good. Next, we'll create
+// an object named "duck" which will contain all of the key/value types that our first animal contained. 
+// So duck should contain keys of 'species', 'name', and 'noises'. The latter will be an array, and will
+// display four noises that ducks make. Finally, we'll push our 'duck' object into our 'animals' array and
+// console.log our animals array to make sure everything looks good.
 
 var animals = [];
 animals.push(animal);
@@ -119,18 +98,26 @@ console.log(animals);
 var duck = {species: 'duck',
             name: 'Jerome',
             noises: ['quack', 'honk', 'sneeze', 'woosh']
-            }
+            };
 animals.push(duck);
 console.log(animals);
+
+//Following the same steps as above, we'll create an object named 'dog', and assign it keys of 'species', 'name',
+//and a 'noises' array. Then, we'll push our new 'dog' object into our 'animals' array then console.log 'animals' 
+//to make sure everything is good. 
 var dog = {species: 'dog',
             name: 'Sam',
             noises: ['bark', 'woof', 'sneeze', 'growl']
-            }
+            };
 animals.push(dog);
+
+//Finally, we'll create our last animal, an object named 'cat', and assign it keys of 'species', 'name',
+//and a 'noises' array. Then, we'll push our new 'cat' object into our 'animals' array then console.log 'animals' 
+//to make sure everything is good. 
 var cat = {species: 'cat',
             name: 'Joe',
             noises: ['meow', 'purr', 'sneeze', 'screech']
-            }
+            };
 animals.push(cat);
 
 
@@ -138,29 +125,31 @@ animals.push(cat);
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-/* 1. [ ] Choose a data structure for this **list** of friends.
- 2. [ ] Write a comment in your code that explains why you chose this data structure.
- 3. [ ] Create a variable called `friends` and assign it to the data structure that you chose.
- 4. [ ] Take a look at the documentation for `Math.random` here: 
-        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- 5. [ ] Write a function called `getRandom` that takes our `animals` array and returns 
-        the `index` of a random element using `Math.random`
- 6. [ ] Using a random index from this function that you just created, get a random 
-        animal and add its `name` to `friends`.
- 7. [ ] `console.log` `friends`.
- 8. [ ] add `friends` as a **property** named `friends` on one of the animals in `animals`
- 9. [ ] `console.log` your work. */
 
-//creating an array for a friends list 
+// First we'll create an array to be used as a friends list 
+// I chose an array so that we can access our friend list by index number. Since our function
+// will use the math.random method, a numbered list will be necessary
+
 var friends = [];
-//creating a function that takes our animals array and returns a random index from
-//that function
+
+//Next, we'll create a function called getRandom that will take our animals array and return a random
+//index number from that array. The function will take a local scoped variable to be used as the return 
+//statement. We'll call this variable 'randomNumber.' Then, we'll assign our math.random equation to 'randomNumber'
+//The 'Math.floor' portion of the equation rounds the number up the the nearest integer. The 'math.random' portion 
+//of the equation gives us a random number between 0 and 1, and the 'animals.length' portion will specify the max
+//number for our equation. In this case, we need a random number that is an index of our animals array. Since 
+//the math.random number will never fully equal 1, then we know that our integer will always be less than the length
+//of our array
 function getRandom(animals) {
    let randomNumber;
    randomNumber = Math.floor(Math.random() * animals.length);
     return randomNumber;
 }
 
+//Now, we're going to push a random index from our 'animals' array into our friends list. We'll use the push
+//method followed by an invocation of the getRandom function (which specifies the index number) then the dot 
+//notation to push the 'name' value from our random animal object. Finally, we'll add our friends list to the 'duck' object.
+//Our final result is that 'duck' now has a randomly chosen friend.
   friends.push(animals[getRandom(animals)].name);
   console.log(friends);
   duck['friends'] = friends; 

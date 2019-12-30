@@ -252,14 +252,22 @@ dataTypes(arr, bool) /* Calling the function prints ['number', 'string', 'null',
   * time. In order to do this, variables containing complex data types don't actually contain a copy of 
   * the data, but rather a reference point to the location of the data stored in memory. So when we add
   * new contents to an object, for example, the space is allocated in memory for the new data, and the 
-  * variable contains a reference point to where the data is stored. Thus, when we copy a variable, we
-  * are not copying the actual data, but rather a reference point to that data. */
+  * variable contains a reference point to where the data is stored. Thus, when we copy a variable that
+  * that holds a complex data type, we are not copying the actual data, but rather a reference 
+  * point to that data. */
   
   var firstName = 'Joe'; //declaring and assigning a first name variable
   var lastName = 'Smithers'; //declaring and assigning a last name variable
   
   var fullname = firstName + lastName; /* The data stored in firstName and lastName are copied directly
-                                        * from memory into the new variable, fullName. */
+                                        * from memory into the new variable, fullName. This is an example
+                                        * of copy by value.*/
                                         
-  var nameArray = [firstName, lastName]; /* When declaring an array, the variable contains a reference point
-                                          * to where the data is stored in memory. */
+  var nameArray = [firstName, lastName]; //When declaring nameArray2, we have assigned it the value of nameArray.
+  var nameArray2 = nameArray;            //Since an array is a complex data type, the actual value of nameArray is 
+                                         //not copied into nameArray2. Instead, a reference point to that data's 
+                                         //location in memory is copied. This is what allows us to continue to add
+                                         //data to our complex data type, because our array is not restricted to the
+                                         //8 bits of memory that our simple data types are restricted to. 
+                                         //This is an exaple of copy by reference.
+ 

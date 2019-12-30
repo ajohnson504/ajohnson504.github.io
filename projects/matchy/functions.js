@@ -13,15 +13,15 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-//  1. Open up the file `functions.js` in your editor.
-//  2. Implement a function called `search` with a signature of `search(animals, name) { //... }` that:
-//   - Takes a paramater representing an Array of `animals`.
-//   - Takes a paramater representing a String, the name of an animal on which to perform a search.
-//   - Looks through the `animals` Array, and returns the animal's Object if an animal with that name exists.
-//   - Returns `null` if no animal with that name exists
-//  3. Use the search bar at the top of the page to make sure your function works.
 
-function search(animals, name) {//animals will take an array, name will take a string
+// Here, we'll create a function called 'search' that will see if a specified animal is contained inside of our 
+// animals array. If yes, the function will return that animal's object. If no, it will return null 
+// The function will  will take an array as the first argument, and a string as the second argument 
+// (note: 'animals' parameter will be our array, 'name' parameter will be our string)
+// We'll use a for loop to loop through the array, then a conditional statement to test if our string
+// is found at any of the array indices
+
+function search(animals, name) {
     for (let i = 0; i < animals.length; i++) {
         if (animals[i].name === name) {
             return animals[i];
@@ -34,12 +34,15 @@ function search(animals, name) {//animals will take an array, name will take a s
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// ## Step 2 - Replace
-//  1. Write a function called `replace` with a signature of `replace(animals, name, replacement) { //... } ` that:
-//   - Takes 3 parameters, an Array of animals, a name of an animal on which to perform a search, and an Object that represents the replacement animal.
-//   - If an animal with that name exists within the `animals` Array, replace it's entire Object with the replacement Object.
-//   - Otherwise do nothing.
-//  2. Test it on the website.
+
+// Here, we'll create a function that searches through our 'animals' array. If the specified string is found
+// within our array, then we'll replace the string's object with the replacement object. To do this, the function
+// will take three arguments: our animals array, a string to search for, and a replacement object to use if the
+// string is found
+// (note: this function takes no return statement. It simply reassigns the value of our given string if that string
+// is found within our array)
+// We'll use a for loop to loop through the array, then a conditional statement to test if our string
+// is found at any of the array indices. 
 
 function replace(animals, name, replacement) {
     for (let i = 0; i < animals.length; i++) {
@@ -53,11 +56,10 @@ function replace(animals, name, replacement) {
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// ## Step 3 - Remove
-//  1. Write a function called `remove` with a signature of `remove(animals, name)` that:
-//   - Takes 2 parameters, an Array of animals, and a name of an animal on which to perform a search.
-//   - If an animal with that name exists within the `animals` Array, remove it.
-//  2. Test that it works on the website.
+// This function will search through our animals array, and if the specified string is found in the array,
+// the function will remove it. We'll pass two arguments into our function: the animals array, and a string to
+// search for. Then, we'll use a conditional statement nested within a for loop to test for our string. If the
+// string is found, the function applies the 'remove' method to the index where it is found
 
 function remove(animals, name) {
     for (let i = 0; i < animals.length; i++) {
@@ -71,18 +73,18 @@ function remove(animals, name) {
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// Our final function will take two arguments, the first is our 'animals' array, and the second is an 'animal'
+// object. The function will test to see if the animal object has 'name' and 'property' values with lengths
+// that are both > 0. Then, the function will test to see if the animal is contained inside the array. If not,
+// then the function will add the animal to our array. We'll use two conditional statements nested within a for 
+// loop. The first will test for our 'name' and 'property' length. The second will test to see if the 'name' contained
+// in our object is contained within any of the objects in our array. If it is, then the "return" statement will end
+// the function. If it isn't, the the function will push our object into the animals array.
 
-//  1. Write a function called `add` with a signature of `add(animals, animal) { //... }` that:
-//   - Takes 2 parameter, an Array of animals, and an Object representing a new animal to be added.
-//   - Checks that the animal Object has a `name` property with a length > 0.
-//   - Checks that the animal Object has a `species` property with a length > 0.
-//   - Has a **unique** name, meaning no other animals have that name.
-//   - Adds this new Object to the `animals` Array, **only** if all the other conditions pass.
-//   - Make sure it works.
+function add(animals, animal) {
 
-function add(animals, animal) {//animals takes an array, animal takes an object
-    if ((animal.name.length > 0 && animal.species.length > 0)) 
-    for (let i = 0; i <animals.length; i++) {
+    for (let i = 0; i < animals.length; i++) {
+        if ((animal.name.length > 0 && animal.species.length > 0)) 
         if (animals[i].name === animal.name) {return;}
     }     animals.push(animal);
 }

@@ -16,7 +16,9 @@
  
  // 2. Else-if //
  /* Else-if statements continue with the logic of if-statements. They allow us to offer a second condition
-  * to check for in case the first condition resulted to false. */
+  * to check for in case the first condition resulted to false. Perhaps most importantly is that we can have
+  * as many else-if statements as we want. The conditional statement will check as many statements as it needs
+  * to until finding one that resolves to true. */
   
    if (Boolean(244) === false) { // first condition to be checked
     console.log('value is false'); //first block of code to be executed if condition is true
@@ -40,20 +42,34 @@
  // 4. Switch // 
  /* A switch statement offers the same functionality as an if-elseif-else statement. The difference
   * is that it offers cleaner looking code that is easier to read, especially when checking for many 
-  * conditions. The other major difference is that switch statements allow you to offer multiple 
-  * conditions that will execute the same result.
+  * conditions. Another major difference is that switch statements allow you to offer multiple 
+  * conditions that will execute the same result. 
+  *
+  * Switch statements work by comparing the value defined at the line switch statement with all of the values
+  * contained in each case. Using the example below, if the given switch statement's input value = 'metal bands',
+  * then the switch statement will check each given case, and execute the code once it finds a case that equals 
+  * 'metal bands'. 
+  *
+  * The syntax of a switch statement involves first using the keyword "switch", then opening parentheses to 
+  * define the value that will be compared to each case. After the closing parentheses, every case block is 
+  * held inside of a single set of curly braces. Then, the keyword "case" will define what value is to be checked,
+  * and developers can contain as many cases as they would like inside of a single case block. Each case block ends
+  * with a colon, and the line of code to be executed is follows. To end a case block, use the "break" keyword followed
+  * by a semi-colon. Then repeat the case block as many times as needed. 
+  * Finally, they keyword "default" can be used to set a default line to be executed if no single case value equals the
+  * original switch value. The "default" line of code works exactly like an 'else' statement.
   */
 
 
    // Here's a switch statement example:
    
-   switch ('metal bands') {
-    case 'jazz bands':
-     console.log('you love jazz')
-     break;
+   switch ('metal bands') {//value to be compared to each value
+    case 'jazz bands'://first case
+     console.log('you love jazz')//first line of code
+     break;//break statement to signal the end of this case block
      
-    case 'soul':
-     console.log('you love soul music')
+    case 'soul'://second value
+     console.log('you love soul music')//second code block
     break;
     
     case 'metal bands':
@@ -61,7 +77,7 @@
      console.log('you love heavy music') //this is the expected result
     break;
     
-    default:
+    default://default code to execute if none of the case statements equal the original switch statement
      console.log('you like all music')
      break;
-   }
+   }//close curly braces

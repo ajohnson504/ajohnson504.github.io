@@ -12,12 +12,18 @@
  * 2. There are 2 phases of using variables: declaration and initialization (or assignment).
  */
 
-// 1. declaration //
+// 1. declaration with keyword 'var'//
+
 var myName;
 
 /*
- * At the declaration phase, the variable myName is undefined because we have not initialized
- * it to anything. 
+ * To declare a variable, we must first use the keyword 'var'.  This tells the
+ * JavaScript interpreter that any name that follows the keyword 'var' is now a variable, and 
+ * we can then initilize, use, and re-assign that variable in our code. At the declaration phase, 
+ * the variable myName is undefined because we have not initialized it to anything. Note that as a 
+ * convention, we use what is called 'camelCase' when naming variables, which means that the first
+ * word is uncapitalized but every word thereafter is capitalized.
+ *
  */
  
 console.log(myName); // prints => undefined
