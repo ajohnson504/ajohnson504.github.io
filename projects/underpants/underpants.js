@@ -420,6 +420,8 @@ _.partition = function(array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+
+
 _.map = function(collection, func) {
     let arr = [];// array to contain the result of calling 'func'
     // conditional to check if collection is an array
@@ -640,16 +642,15 @@ _.reduce = function(array, func, seed) {
     //using a loop to call 'func' on every element in 'array'
     //'func' will take 'previous result' as one if its argument, but will also
     //take 'seed' on first iteration
-    if (seed === undefined) {
-    seed = array[0];
-        } 
-    } 
-    if (seed !== undefined) {
-        for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
+        if (seed === undefined){
+            seed = array[0];
+        } else {
             seed = func(seed, array[i], i);
         }
     }
     return seed;
+
 };
 
 /** _.extend
@@ -666,6 +667,22 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+
+
+_.extend = function(object1) {
+    // using a for loop to iterate through every argument. the 'arguments' 
+    // keyword allows us to have an infinite number of parameters, as long as 
+    // at least one object is given. We start our loop at 1 instead of 0 because
+    // we're pushing all other key/value pairs into object1
+    for (let i = 1; i < arguments.length; i++) {
+        for (let key in arguments[i]) {
+            object1[key] = arguments[i][key]; 
+        }
+    }
+    return object1;
+
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
